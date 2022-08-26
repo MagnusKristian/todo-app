@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     alert("INSIDE GET-ITEM USEEFFECT!");
-    if (storedTodos == true) {setTodos(storedTodos); console.log("sup dawg!")}
+    if (storedTodos) {setTodos(storedTodos); console.log("sup dawg!")}
     console.log(storedTodos)
     console.log("hva faen");
   }, [])
