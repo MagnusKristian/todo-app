@@ -3,7 +3,7 @@ import TodoList from './TodoList';
 import {v4 as uuidv4 } from 'uuid';
 
 
-const LOCAL_STORAGE_KEY = 'todo-app.todos';
+const LOCAL_STORAGE_KEY = [];
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -12,9 +12,7 @@ function App() {
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     alert("INSIDE GET-ITEM USEEFFECT!");
-    if (storedTodos) {setTodos(storedTodos); console.log("sup dawg!")}
-    console.log(storedTodos)
-    console.log("hva faen");
+    if (storedTodos) {setTodos( prevTodos => [...prevTodos, ...storedTodos] ); console.log(storedTodos); console.log("Prev is stored Todos if storedTodos");}
   }, [])
 
   useEffect(() =>{
