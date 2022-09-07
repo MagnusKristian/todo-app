@@ -5,21 +5,15 @@ export default function Todo({todo, toggleTodo}) {
     toggleTodo(todo.id)
   }
   return (
-    <div style={
-        { backgroundColor:"gray", 
-          marginTop: "10px",
-          marginBottom:"10px", 
-          marginLeft:"auto", 
-          marginRight:"auto", 
-          width:"50%", 
-          borderRadius:"10px",
-
-
-        }
-      }>  
+    <div >  
       <label>
-        <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
-        -TODO: {todo.name} -ID: {todo.id}
+        
+        <div className="todoItem">
+          <input className="todoCheckBox" type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
+          <div>
+            -TODO: {todo.name}
+          </div>
+        </div>
       </label>
       
     </div>
